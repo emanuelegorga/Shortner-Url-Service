@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURI');
+const dotenv = require("dotenv").config();
+const db = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-zvtoj.mongodb.net/test?retryWrites=true&w=majority`;
+// const config = require('config');
+// const db = config.get('mongoURI');
 
 const connectDB = async () => {
   try {
