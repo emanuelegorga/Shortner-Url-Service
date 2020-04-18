@@ -4,7 +4,7 @@ const validUrl = require('valid-url');
 const shortId = require('shortid');
 const config = require('config');
 
-const Url = require('../models/url');
+const Url = require('../models/Url');
 
 // @route       POST /api/url/shorten
 // @desc        Create short URL
@@ -14,7 +14,7 @@ router.post('/shorten', async (req, res) => {
 
   // Check base url
   if(!validUrl.isUri(baseUrl)) {
-    return res.status(401).json('Invalid base URL');
+    return res.status(422).json('Invalid base URL');
   }
 
   // Create URL code
@@ -46,7 +46,7 @@ router.post('/shorten', async (req, res) => {
       res.status(500).json('Server error');
     }
   } else {
-    res.status(401).json('Invalid long url');
+    res.status(422).json('Invalid long url');
   }
 });
 
