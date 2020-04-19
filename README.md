@@ -5,7 +5,7 @@ This is a Node.js project which can be used as a service on a website to shorten
 How to use
 ---
 - Create a database on MongoDB
-- `$ git clone git@github.com:emanuelegorga/dev-interface.git`
+- `$ git clone git@github.com:emanuelegorga/Shortner-Url-Service.git`
 - `cd url_shortener`
 - `npm install`
 - Duplicate the `.env` file and set the MongoDB cluster URI to the environment variable
